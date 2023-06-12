@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"rickAndMortyAPI\/rick[1:6]","start":1686605267732,"end":1686605268932,"title":"rickAndMortyAPI\/rick[1:6] 18:27:47.732-18:27:48.932 Testing the character Rick Sanchez return and matching its name and origin"},{"id":2,"group":1,"content":"rickAndMortyAPI\/rick[2:14]","start":1686605268956,"end":1686605269048,"title":"rickAndMortyAPI\/rick[2:14] 18:27:48.956-18:27:49.048 Testing the counting of alive humans in the series"},{"id":3,"group":1,"content":"rickAndMortyAPI\/rick[3:21]","start":1686605269071,"end":1686605269395,"title":"rickAndMortyAPI\/rick[3:21] 18:27:49.071-18:27:49.395 Testing if the character 400 (Giant Judge) is in the episode 5 (the only one that he appears)"},{"id":4,"group":1,"content":"rickAndMortyAPI\/rick[4:28]","start":1686605269425,"end":1686605269758,"title":"rickAndMortyAPI\/rick[4:28] 18:27:49.425-18:27:49.758 Testing the negative return for character 850"},{"id":5,"group":1,"content":"rickAndMortyAPI\/rick[5:35]","start":1686605269793,"end":1686605270020,"title":"rickAndMortyAPI\/rick[5:35] 18:27:49.793-18:27:50.020 Test the location 21 return, its type and if Abradolf Lincler is its first resident"},{"id":6,"group":1,"content":"rickAndMortyAPI\/rick[6:50]","start":1686605270034,"end":1686605270328,"title":"rickAndMortyAPI\/rick[6:50] 18:27:50.034-18:27:50.328 Test the negative location return using the filters dimension 'Dimension C-137' and type 'Game'"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
